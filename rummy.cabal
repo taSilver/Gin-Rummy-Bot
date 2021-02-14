@@ -1,0 +1,78 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 85a7e699ac2172b81562d5980691b8e539f961d515e5e2039beafc7817bbe103
+
+name:           rummy
+version:        0.1.0.0
+description:    Please see the README on Github at <https://github.com/githubuser/hearts#readme>
+homepage:       https://github.com/githubuser/rummy#readme
+bug-reports:    https://github.com/githubuser/rummy/issues
+author:         Tim Dwyer and Arthur Mahéo
+maintainer:     example@example.com
+copyright:      2020 Tim Dwyer and Arthur Mahéo
+license:        BSD3
+build-type:     Simple
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/rummy
+
+library
+  exposed-modules:
+      Cards
+      Deck
+      EitherIO
+      Parser.Instances
+      Parser.Parser
+      Rummy.Play
+      Rummy.Rules
+      Rummy.Types
+  other-modules:
+      Paths_rummy
+  hs-source-dirs:
+      src
+  default-extensions: Trustworthy NamedFieldPuns
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , cassava
+    , containers
+    , deepseq
+    , directory
+    , filepath
+    , mtl
+    , random
+    , time
+    , utility-ht
+    , vector
+  default-language: Haskell2010
+
+executable staticgame
+  main-is: Main.hs
+  other-modules:
+      Player
+      Paths_rummy
+  hs-source-dirs:
+      staticgame
+      submission
+  default-extensions: Trustworthy NamedFieldPuns
+  ghc-options: -Wall -Wno-trustworthy-safe -Wno-orphans -Wno-unused-imports
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , cassava
+    , containers
+    , deepseq
+    , directory
+    , filepath
+    , mtl
+    , random
+    , rummy
+    , time
+    , utility-ht
+    , vector
+  default-language: Haskell2010

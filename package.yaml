@@ -1,0 +1,55 @@
+name:                rummy
+version:             0.1.0.0
+github:              "githubuser/rummy"
+license:             BSD3
+author:              "Tim Dwyer and Arthur Mahéo"
+maintainer:          "example@example.com"
+copyright:           "2020 Tim Dwyer and Arthur Mahéo"
+
+extra-source-files: []
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on Github at <https://github.com/githubuser/hearts#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- random
+- mtl
+- cassava
+- bytestring
+- vector
+- time
+- filepath
+- directory
+- utility-ht
+- containers
+- deepseq
+
+library:
+  source-dirs: src
+  default-extensions:
+  - Trustworthy
+  - NamedFieldPuns
+
+executables:
+  staticgame:
+    main: Main.hs
+    source-dirs:
+    - staticgame
+    - submission
+    ghc-options:
+    - -Wall
+    - -Wno-trustworthy-safe
+    - -Wno-orphans
+    - -Wno-unused-imports
+    dependencies:
+    - rummy
+    default-extensions:
+    - Trustworthy
+    - NamedFieldPuns
